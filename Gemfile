@@ -24,8 +24,15 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 gem 'devise', '~> 4.7.0'
+
+# bulma CSS framework, a single css file without JS.
+gem "bulma-rails", "~> 0.8.0"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+# font awesome gem for form styling
+# gem "font-awesome-rails"
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
