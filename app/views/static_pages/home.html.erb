@@ -1,9 +1,9 @@
-<section class="hero is-success is-fullheight">
+<div class="hero is-success is-large">
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Automate Your Home Garage
+        Automate Garage
       </h1>
       <h2 class="subtitle">
         with Smart Garage
@@ -13,4 +13,57 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
+
+<div class="hero is-light is-medium">
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Just Drive
+      </h1>
+      <h2 class="subtitle">
+        we'll open the gate for you
+      </h2>
+      <% unless user_signed_in? %>
+        <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-primary is-rounded" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="hero is-warning is-medium">
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Check Out
+      </h1>
+      <h2 class="subtitle">
+        how they automate garages
+      </h2>
+      <% unless user_signed_in? %>
+        <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-danger is-rounded" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="hero is-success is-medium">
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Why Not
+      </h1>
+      <h2 class="subtitle">
+        automate yours as well?
+      </h2>
+      <% unless user_signed_in? %>
+        <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-info is-light is-rounded" %>
+      <% end %>
+    </div>
+  </div>
+</div>
