@@ -1,3 +1,4 @@
+$notification-radius: 0;
 
 @import "bulma";
 
@@ -28,6 +29,23 @@ body {
 .required-field::after {
     content: "*";
     color: red;
+    margin-left: 0.1em;
+}
+
+.notification {
+	margin-bottom: 0;
+}
+
+.notification-alert {
+	@extend .is-warning;
+}
+
+.notification-notice {
+	@extent .is-light;
+}
+
+.button_to + .button_to {
+	margin-left: 0.75em;
 }
 /*
 .container {
