@@ -1,4 +1,5 @@
 $notification-radius: 0;
+$notification-padding: 1.25rem 2.5rem 1rem 1rem;
 
 @import "bulma";
 
@@ -37,15 +38,35 @@ body {
 }
 
 .notification-alert {
-	@extend .is-warning;
+	@extend .is-danger;
 }
 
 .notification-notice {
 	@extent .is-light;
 }
 
-.button_to + .button_to {
+.buttons > .button_to + .button_to {
 	margin-left: 0.75em;
+}
+
+.bd-footer-link-title {
+	color: #363636;
+	font-size: 1.25rem;
+	font-weight: 600;
+	& + & {
+		margin-top: 1em;
+	}
+}
+.bd-footer-link {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	line-height: 1.2;
+}
+.footer-link {
+	color: #363636;
+	&:hover {
+		color: rgb(50, 115, 220);
+	}
 }
 /*
 .container {

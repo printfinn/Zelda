@@ -4,12 +4,14 @@
 
 
   <%= render "layouts/header.html.erb" %>
-  <% flash.each do |message_type, message| %>
-    <div class="notification is-marginless notification-<%= message_type %>">
-      <button class="delete"></button>
-      <%= message %>
-    </div>
-  <% end %>
+  <div class="has-text-centered is-size-5">
+    <% flash.each do |message_type, message| %>
+      <div class="notification is-marginless notification-<%= message_type %>">
+        <button class="delete"></button>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
   <body>
     <%= yield %>
   </body>

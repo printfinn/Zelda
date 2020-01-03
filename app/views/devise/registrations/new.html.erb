@@ -1,32 +1,33 @@
 <section class="section">
-  <div class="title">Create an account</div>
+  <div class="container">
+    <div class="title">Create an account</div>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :email, class: "label required-field" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "Your email" %>
-    </div>
+      <div class="field">
+        <%= f.label :email, class: "label required-field" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "Your email" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password, class: "label required-field" %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "Your password" %>
-    </div>
+      <div class="field">
+        <%= f.label :password, class: "label required-field" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "Your password" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation, class: "label required-field" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "Repeat password" %>
-    </div>
+      <div class="field">
+        <%= f.label :password_confirmation, class: "label required-field" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "Repeat password" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Continue", class: "button is-link" %>
-    </div>
-  <% end %>
+      <div class="actions">
+        <%= f.submit "Continue", class: "button is-link" %>
+      </div>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
-
+    <%= render "devise/shared/links" %>
+  </div>
 </section>
