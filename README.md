@@ -1,24 +1,51 @@
-# README
+# Ruby on Rails Smart Home Web Interface application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## License
 
-Things you may want to cover:
+All source code is available jointly under the MIT License and the Beerware License. See
+[LICENSE.md](LICENSE.md) for details.
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get started with the app, clone the repo and then install the needed gems:
 
-* Configuration
+If you're on Arm, especially on Raspberry Pi Debian, you might also want to install a package: libffi-dev. It's reported [here](https://github.com/ffi/ffi/issues/697) that there is no warning on missing ffi dependencies, which will cause segmentfault when running rails commands.
 
-* Database creation
+```
+$ bundle install --without production
+```
 
-* Database initialization
+Then install yarn:
+```
+$ yarn install --check-files
+```
+If you don't have yarn, install it following the official [website](https://yarnpkg.com/lang/en/docs/install/#mac-stable).
 
-* How to run the test suite
+If you don't have node installed (which is reqired by yarn), you might want to install node as well, [official site](https://nodejs.org/en/download/current/).
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+Next, migrate the database:
 
-* ...
+```
+$ rails db:migrate
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+
+
+* Ruby version: 2.7.0
+
+* System dependencies: Linux MacOS
+
+* Rails version: 6.0.2.1
