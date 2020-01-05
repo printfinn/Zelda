@@ -7,9 +7,10 @@ All source code is available jointly under the MIT License and the Beerware Lice
 
 ## Getting started
 
+
+If you're on Arm, especially on Raspberry Pi Debian, you might also want to install a package: `libffi-dev`. It's reported [here](https://github.com/ffi/ffi/issues/697) that there is no warning on missing ffi dependencies, which will cause segmentfault when running rails commands.
 To get started with the app, clone the repo and then install the needed gems:
 
-If you're on Arm, especially on Raspberry Pi Debian, you might also want to install a package: libffi-dev. It's reported [here](https://github.com/ffi/ffi/issues/697) that there is no warning on missing ffi dependencies, which will cause segmentfault when running rails commands.
 
 ```
 $ bundle install --without production
