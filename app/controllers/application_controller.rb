@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_out_path_for(resource_or_scope)
-		  static_pages_goodbye_url
+		  root_url
 		end
 end

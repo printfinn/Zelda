@@ -1,3 +1,4 @@
+<% provide(:page_title, "Home") %>
 <div class="hero is-success is-large">
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
@@ -25,8 +26,8 @@
       <h2 class="subtitle">
         we'll open the gate for you
       </h2>
-      <% unless user_signed_in? %>
-        <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-primary is-rounded" %>
+      <% if user_signed_in? %>
+        <%= button_to "My Devices", devices_path, method: "get", class: "button is-primary is-rounded" %>
       <% end %>
     </div>
   </div>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_29_104043) do
+ActiveRecord::Schema.define(version: 2020_01_07_010242) do
+
+  create_table "devices", force: :cascade do |t|
+    t.string "device_name"
+    t.string "device_type"
+    t.string "device_location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "on_command"
+    t.text "off_command"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
