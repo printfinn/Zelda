@@ -1,0 +1,10 @@
+<% provide(:page_title, "Camera Photo") %>
+<% provide(:nav_title, @device.device_name) %>
+<section class="section">
+  <div class="container">
+  	<%= render 'devices/head_nav' %>
+  	<figure class="image is3by2">
+  		<%= image_tag('/assets/images/captured.jpg') %>
+  	</figure>
+  </div>
+</section>

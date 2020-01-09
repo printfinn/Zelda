@@ -53,6 +53,17 @@ class DevicesController < ApplicationController
 		trigger
 	end
 
+	def trigger_capture_command
+		@device = Device.find(params[:id])
+		cmd = @device.on_command
+		#system(cmd)
+		redirect_to camera_photo_device_path
+	end
+
+	def camera_photo
+		@device = Device.find(params[:id])
+	end
+
 	private
 		def device_params
 	    params.require(:device).permit(:device_name, :device_type, :device_location, :on_command, :off_command)
