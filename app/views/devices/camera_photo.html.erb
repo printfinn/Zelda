@@ -3,8 +3,17 @@
 <section class="section">
   <div class="container">
   	<%= render 'devices/head_nav' %>
-  	<figure class="image is3by2">
-  		<%= image_tag('/assets/images/captured.jpg') %>
-  	</figure>
-  </div>
+  	<div class="box">
+	  	<figure class="image is4by3">
+	  		<%= image_tag("/assets/images/p5.jpg?#{Time.now.to_f}") %>
+	  	</figure>
+	  </div>
+  	
+
+	  <% if @device.device_type.downcase == "camera" %>
+			<div class="buttons is-right">
+				<%= button_to "Capture", capture_device_path, method: "post", class: "button is-warning is-large" %>
+			</div>
+		<% end %>
+	</div>
 </section>

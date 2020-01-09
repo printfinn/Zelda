@@ -56,7 +56,7 @@ class DevicesController < ApplicationController
 	def trigger_capture_command
 		@device = Device.find(params[:id])
 		cmd = @device.on_command
-		#system(cmd)
+		system(cmd)
 		redirect_to camera_photo_device_path
 	end
 
@@ -88,7 +88,9 @@ class DevicesController < ApplicationController
 			Process.detach(job1)
 			message = "Turning #{@device.device_name} #{instruction.upcase}"
 			flash[:primary] = message
-			redirect_to devices_path
+			if @device.device_type.downcase == "light"
+				redirect_to devices_path
+			end
 		end
 
 end

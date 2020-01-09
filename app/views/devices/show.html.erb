@@ -34,17 +34,19 @@
 		</div>
 		
 		<br />
-		<% if @device.device_type.downcase == "light" %>
+		<% if @device.device_type.downcase != "camera" %>
 			<div class="buttons is-right">
 			  <%= button_to "On", on_device_path, method: "post", class: "button is-success is-large" %>
 			  <%= button_to "Off", off_device_path, method: "post", class: "button is-warning is-large" %>
 			</div>
 		<% end %>
+
 		<% if @device.device_type.downcase == "camera" %>
 			<div class="buttons is-right">
 				<%= button_to "Capture", capture_device_path, method: "post", class: "button is-warning is-large" %>
 				<%= button_to "Show", camera_photo_device_path, method: "get", class: "button is-light is-large" %>
 			</div>
 		<% end %>
+		
 	</div>
 </section>
