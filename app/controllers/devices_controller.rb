@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@devices = Device.all
+		@devices = Device.all.order("device_type")
 	end
 
 
