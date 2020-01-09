@@ -50,3 +50,19 @@ $ rails server
 * System dependencies: Linux MacOS
 
 * Rails version: 6.0.2.1
+
+## Screen Shot
+
+* Responsive Design
+Desktop frontpage
+![front page desktop](https://user-images.githubusercontent.com/10386624/72062149-2a47d500-3312-11ea-8a5d-7e945eb329ab.png)
+
+Mobile frontpage with dropdown
+![front page mobile](https://user-images.githubusercontent.com/10386624/72062151-2a47d500-3312-11ea-81da-b3c62cfd4fe0.png)
+
+Devices list
+![devices list](https://user-images.githubusercontent.com/10386624/72062152-2ae06b80-3312-11ea-99ae-866c7f138f15.png)
+![create a device](https://user-images.githubusercontent.com/10386624/72062153-2ae06b80-3312-11ea-940e-447b78c7e59e.png)
+
+User management with Devise gem
+![user register](https://user-images.githubusercontent.com/10386624/72062154-2ae06b80-3312-11ea-93a6-35242036f91e.png)
