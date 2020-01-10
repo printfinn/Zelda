@@ -9,6 +9,10 @@
       <% if params[:action] == "index" %>
         <%= button_to 'New device', new_device_path, method: "get", class: "button is-rounded is-success" %>        
       <% end %>
+      <% if params[:action] == "new" %>
+        <%= button_to 'Back', devices_path, method: "get", class: "button is-dark" %>        
+      <% end %>
+
     </div>
   </div>
 </div>
