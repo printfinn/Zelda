@@ -1,43 +1,18 @@
-<% provide(:page_title, "My Devices") %>
+<% provide(:page_title, "Control Center") %>
+<% provide(:nav_title, "Control Center") %>
 <section class="section">
   <div class="container">
-
-    <div class="columns is-mobile is-vcentered is-centered">
-      <div class="column is-three-quarters">
-        <div class="title">
-          My Devices
-        </div>
-      </div>
-      <div class="column is-one-quarter">
-        <div class="buttons is-right">
-          <%= button_to 'New device', new_device_path, method: "get", class: "button is-rounded is-success" %>
-        </div>
-      </div>
-    </div>
-
+    <%= render 'head_nav' %>
+    
     <div class="table-container">
-      <table class="table is-striped is-narrow is-fullwidth">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Show</th>
-            <th>Edit</th>
-            <th>Destroy</th>
-          </tr>
-        </thead>
+      <table class="table is-striped is-fullwidth">
         <tbody>
           <% @devices.each do |device| %>
-            <tr>
-              <th><%= device.device_name %></th>
-              <td><%= button_to 'Show', device_path(device), method: "get", class: "button is-success" %></td>
-              <td><%= button_to 'Edit', edit_device_path(device), method: "get", class: "button is-info" %></td>
-              <td><%= button_to 'Destroy', device_path(device), method: "delete", class: "button is-danger", 
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+            <%= render 'device_item', device: device %>
           <% end %>
         </tbody>
       </table>
     </div>
+
   </div>
 </section>

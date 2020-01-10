@@ -81,7 +81,26 @@ body {
 	vertical-align: middle;
 }
 
+td > form > .button {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
 
+.shadowed {
+	transition: all 0.3s ease 0s;
+	text-align: left;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+.shadowed:active {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+tr.small-padding > td {
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+}
 /*
 .container {
 	display: flex;

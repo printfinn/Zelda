@@ -34,19 +34,12 @@
 		</div>
 		
 		<br />
-		<% if @device.device_type.downcase != "camera" %>
-			<div class="buttons is-right">
-			  <%= button_to "On", on_device_path, method: "post", class: "button is-success is-large" %>
-			  <%= button_to "Off", off_device_path, method: "post", class: "button is-warning is-large" %>
-			</div>
-		<% end %>
-
-		<% if @device.device_type.downcase == "camera" %>
-			<div class="buttons is-right">
-				<%= button_to "Capture", capture_device_path, method: "post", class: "button is-warning is-large" %>
-				<%= button_to "Show", camera_photo_device_path, method: "get", class: "button is-light is-large" %>
-			</div>
-		<% end %>
-		
+		<div class="buttons is-right">
+			<%= button_to "Back", devices_path, method: "get", class: "button is-dark is-normal" %>
+			<%= button_to 'Edit', edit_device_path, method: "get", class: "button is-info" %>	
+			<%= button_to 'Destroy', device_path, method: "delete", class: "button is-danger", 
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %>
+		</div>
 	</div>
 </section>

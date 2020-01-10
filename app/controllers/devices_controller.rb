@@ -88,9 +88,7 @@ class DevicesController < ApplicationController
 			Process.detach(job1)
 			message = "Turning #{@device.device_name} #{instruction.upcase}"
 			flash[:primary] = message
-			if @device.device_type.downcase == "light"
-				redirect_to devices_path
-			end
+			redirect_to devices_path
 		end
 
 end

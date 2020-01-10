@@ -1,4 +1,5 @@
 <% provide(:page_title, "Home") %>
+<% unless user_signed_in? %>
 <div class="hero is-success is-large">
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
@@ -15,20 +16,20 @@
     </div>
   </div>
 </div>
+<% end %>
 
-<div class="hero is-warning is-medium">
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        Just Drive
-      </h1>
-      <h2 class="subtitle">
-        we'll open the gate for you
-      </h2>
-      <% if user_signed_in? %>
-        <%= button_to "My Devices", devices_path, method: "get", class: "button is-primary is-rounded" %>
-      <% end %>
+<% if user_signed_in? %>
+  <div class="hero is-success is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Control Center
+        </h1>
+        <h2 class="subtitle">
+          Add and control your devices
+        </h2>
+        <%= button_to "Your Devices", devices_path, method: "get", class: "button is-dark is-inverted is-rounded" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
