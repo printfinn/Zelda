@@ -4,6 +4,13 @@ class DevicesController < ApplicationController
 
 	def index
 		@devices = Device.all.order("device_type")
+		@photo_name = ""
+
+		# This session is set in trigger_capture_command method.
+		if session[:photo_name] && !session[:photo_name].empty?
+			@photo_name = session[:photo_name]
+		end
+		session[:photo_name] = ""
 	end
 
 
@@ -57,6 +64,7 @@ class DevicesController < ApplicationController
 		@device = Device.find(params[:id])
 		cmd = @device.on_command
 		system(cmd)
+		session[:photo_name] = "Photo from #{@device.device_name}"
 		redirect_to devices_path#camera_photo_device_path
 	end
 
