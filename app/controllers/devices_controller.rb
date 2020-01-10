@@ -57,7 +57,7 @@ class DevicesController < ApplicationController
 		@device = Device.find(params[:id])
 		cmd = @device.on_command
 		system(cmd)
-		redirect_to camera_photo_device_path
+		redirect_to devices_path#camera_photo_device_path
 	end
 
 	def camera_photo

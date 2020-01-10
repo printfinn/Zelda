@@ -14,8 +14,9 @@
 	<% elsif device.device_type.downcase == "camera" %>
 		<td><%= button_to "Capture", capture_device_path(device), method: "post", class: "button is-warning is-outlined is-light is-fullwidth" %></td>
 		<td><%= button_to device.device_name, device_path(device), method: "get", class: "button shadowed is-link is-fullwidth" %></td>
-		<td></td>
-	
+		<td><%= image_tag "/assets/images/captured.jpg?#{Time.now.to_f}", class: "image is-96x64" %></td>
+
+		
 	<% else %>
 		<td><%= button_to "Cmd On", on_device_path(device), method: "post", class: "button is-success is-outlined is-light is-fullwidth" %></td>
 		<td><%= button_to device.device_name, device_path(device), method: "get", class: "button shadowed is-primary is-fullwidth" %></td>
