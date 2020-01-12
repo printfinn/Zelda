@@ -11,7 +11,7 @@
 		<td><%= button_to "Turn off", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined is-fullwidth" %></td>
 
 	<% elsif device.device_type.downcase == "alarm" %>
-		<td><%= button_to "Turn on", on_device_path(device), method: "post", class: "button is-success is-light is-outlined is-fullwidth" %></td>
+		<td><%= button_to "Turn on", on_device_path(device), method: "post", class: "button is-primary is-light is-outlined is-fullwidth" %></td>
 		<td><%= button_to device.device_name, device_path(device), method: "get", class: "button is-warning shadowed is-fullwidth" %></td>
 		<td><%= button_to "Turn off", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined is-fullwidth" %></td>
 

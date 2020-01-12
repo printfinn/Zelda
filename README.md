@@ -2,8 +2,7 @@
 
 ## License
 
-All source code is available jointly under the MIT License and the Beerware License. See
-[LICENSE.md](LICENSE.md) for details.
+All source code is available jointly under the MIT License and the Beerware License.
 
 ## What it does
 
@@ -11,11 +10,21 @@ You have a lot of smart devices, you want to control them but not with Big Broth
 
 To use this:
 
-1. You need to figure out how to control your smart device by your self, write the command in whatever language you like and put the code in a single .py file or .sh file or .c .rb .rs file, then put them on any machine you like.
-2. Get into localhost:3000 of this rails app, then sign up a user, create a device in the web page.
-3. When creating the new device, fill in the file in step 1 in the form On Command / Off Command, it will be called like you are running it in the shell. For example, your file is at "/User/bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py"
-4. In the `device_type` field, if you fill one of "Camera, Alarm, Light, Gate", it will have a different appearance in the web page.
-5. If you are using a camera, this app loads the photo generated in the folder` /public/assets/images/captured.jpg`.
+0. How this works: you give this site a script which can simulate the control of your smart device. It runs the script for you when you hit the buttons in the control center of this site.
+
+1. You need to figure out how to control your smart device first by your self, write the command to simulate this procedure in whatever language you like and put the code in a single .py file or .sh file or .c .rb .rs file, then put them on any machine you like.
+
+2. Sign up a user, create a device in the web page.
+
+3. When creating the new device, fill in the file in step 1 in the form On Command / Off Command, it will be called like you are running it in the shell. For example, your file is at "/User/bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py" (don't put the quotes, just write the command as if you are writing them in the shell).
+
+4. In the `device_type` field, if you fill it with any of "Camera, Alarm, Light, Gate", it will have a different appearance in the web page.
+
+5. If you are using a camera, this app loads the photo generated in the folder `/public/assets/images/captured.jpg`.
+
+6. If the script file is on another machine, you might want to ssh to it, make sure to pass your public ssh keyfile to that remote machine so you don't have to input your password while calling the script with ssh through this site.
+
+7. Don't write 'sudo rm -rf' kind of commands, it's not fun.
 
 ## Getting started
 
@@ -26,7 +35,7 @@ To get started with the app, clone the repo and then install the needed gems:
 
 
 ```
-$ bundle install --without production
+$ bundle install
 ```
 
 Then install yarn:
@@ -88,3 +97,4 @@ $ rails server
 * [DevOps] CI | CD.
 * [New Feature] Schedule triggers to run periodically with calendar interface.
 * [Software engineering] Write documents.
+* [Translate] I18n

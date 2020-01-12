@@ -1,35 +1,9 @@
 <% provide(:page_title, "Home") %>
-<% unless user_signed_in? %>
-<div class="hero is-success is-large">
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        Automate Garage
-      </h1>
-      <h2 class="subtitle">
-        with Smart Garage
-      </h2>
-      <% unless user_signed_in? %>
-        <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-info is-light is-rounded" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<% if !user_signed_in? %>
+  <%= render "not_signed_in_home" %>
 <% end %>
 
 <% if user_signed_in? %>
-  <div class="hero is-success is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          Control Center
-        </h1>
-        <h2 class="subtitle">
-          Add and control your devices
-        </h2>
-        <%= button_to "Your Devices", devices_path, method: "get", class: "button is-dark is-inverted is-rounded" %>
-      </div>
-    </div>
-  </div>
+  <%= render "signed_in_home" %>
 <% end %>

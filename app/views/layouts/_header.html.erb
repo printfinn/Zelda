@@ -1,6 +1,7 @@
 <header>
   <nav class="navbar is-success is-fixed-top">
     <div class="container">
+
       <div class="navbar-brand">
         <%= link_to "Smart Garage", root_path, class: "navbar-item" %>
         <span class="navbar-burger burger" data-target="navbarMenuHeroC">
@@ -11,10 +12,11 @@
       </div>
 
       <div id="navbarMenuHeroC" class="navbar-menu">
+        
         <div class="navbar-start">
           <div class="navbar-item">
             <%= link_to "Home", root_path, class: "navbar-item" %>
-            <%= link_to "About", static_pages_about_path, class: "navbar-item" %>
+            <%= link_to "Documentation", static_pages_documentation_path, class: "navbar-item" %>
             <% if user_signed_in? %>
               <%= link_to "Control Center", devices_path, class: "navbar-item" %>
               <%= link_to "My Profile", edit_user_registration_path, class: "navbar-item" %>
@@ -36,7 +38,9 @@
             <% end %>
           </div>
         </div>
+
       </div>
+
     </div>
   </nav>
 </header>
