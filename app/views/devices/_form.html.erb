@@ -1,27 +1,29 @@
 <%= form_with model: @device, local: true do |form| %>
+  <%= render 'devise/shared/error_messages', resource: @device %>
+
   <div class="field">
-    <%= form.label :device_name %><br>
-    <%= form.text_field :device_name, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "Gate: Garage 1" %>
+    <%= form.label :device_name, class: "label required-field" %>
+    <%= form.text_field :device_name, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "Gate: Garage 1 (Required)" %>
   </div>
  
   <div class="field">
-    <%= form.label :device_type %>
-    <%= form.text_field :device_type, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "Gate / Camera / Light" %>
+    <%= form.label :device_type, class: "label" %>
+    <%= form.text_field :device_type, autocomplete: "", class: "input is-info", type: "text", placeholder: "Gate / Camera / Light / Else" %>
   </div>
  
  	<div class="field">
-    <%= form.label :device_location %>
-    <%= form.text_field :device_location, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "Garage 1" %>
+    <%= form.label :device_location, class: "label" %>
+    <%= form.text_field :device_location, autocomplete: "", class: "input is-info", type: "text", placeholder: "Garage 1" %>
   </div>
 
   <div class="field">
-    <%= form.label :on_command %>
-    <%= form.text_field :on_command, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "python3 ~/on_script.py" %>
+    <%= form.label :on_command, class: "label" %>
+    <%= form.text_field :on_command, autocomplete: "", class: "input is-info", type: "text", placeholder: "ssh pi@192.168.1.1 python3 ~/path/to/your/device/script/folder/on.py" %>
   </div>
 
   <div class="field">
-    <%= form.label :off_command %>
-    <%= form.text_field :off_command, autofocus: true, autocomplete: "", class: "input is-info", type: "text", placeholder: "python3 ~/off_script.py" %>
+    <%= form.label :off_command, class: "label" %>
+    <%= form.text_field :off_command, autocomplete: "", class: "input is-info", type: "text", placeholder: "sh ~/path/to/your/device/script/off.sh" %>
   </div>
 
   <div class="actions">

@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 	  	post 'on', to: 'devices#trigger_on_command'
 	  	post 'off', to: 'devices#trigger_off_command'
 	  	post 'capture', to: 'devices#trigger_capture_command'
-	  	get 'camera_photo', to: 'devices#camera_photo'
 	  end
-	  
 	end
 
   get 'static_pages/home'

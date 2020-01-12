@@ -39,7 +39,7 @@
 			<%= button_to 'Edit', edit_device_path, method: "get", class: "button is-info" %>	
 			<%= button_to 'Destroy', device_path, method: "delete", class: "button is-danger", 
 	        method: :delete,
-	        data: { confirm: 'Are you sure?' } %>
+	        data: { confirm: "This will remove your device:\n\n#{@device.device_name}\n\nYou can't find it back, are you sure?" } %>
 		</div>
 	</div>
 </section>

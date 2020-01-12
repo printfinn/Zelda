@@ -21,9 +21,12 @@ class DevicesController < ApplicationController
 	def create
 		@device = Device.new(device_params)
 
-		@device.save
-
-		redirect_to @device
+		if @device.save
+			flash[:info] = "You have successfully created a new device: #{@device.device_name}"
+			redirect_to @device
+		else
+			render 'new'
+		end
 	end
 
 	def show
@@ -38,6 +41,7 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
 
     if @device.update(device_params)
+    	flash[:info] = "You have successfully updated #{@device.device_name}"
       redirect_to @device
     else
       render 'edit'
@@ -46,9 +50,12 @@ class DevicesController < ApplicationController
 
 	def destroy
 		@device = Device.find(params[:id])
-		@device.destroy
-
-		redirect_to devices_path
+		if @device.destroy
+			flash[:info] = "You have successfully removed #{@device.device_name}."
+			redirect_to devices_path
+		else
+			flash[:alarm] = "Something is wrong, please contact admin or create a new issue on Github."
+		end
 	end
 
 
@@ -66,10 +73,6 @@ class DevicesController < ApplicationController
 		system(cmd)
 		session[:photo_name] = "Photo from #{@device.device_name}"
 		redirect_to devices_path#camera_photo_device_path
-	end
-
-	def camera_photo
-		@device = Device.find(params[:id])
 	end
 
 	private
