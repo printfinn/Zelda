@@ -16,7 +16,7 @@ To use this:
 
 2. Sign up a user, create a device in the web page.
 
-3. When creating the new device, fill in the file in step 1 in the form On Command / Off Command, it will be called like you are running it in the shell. For example, your file is at "/User/bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py" (don't put the quotes, just write the command as if you are writing them in the shell).
+3. When creating the new device, fill the file in step 1 in the On Command / Off Command form, it will be called by this site as if you are running it in the shell. For example, your file is at "/User/Bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py" (don't put the quotes, just write the command as if you are writing them in the shell).
 
 4. In the `device_type` field, if you fill it with any of "Camera, Alarm, Light, Gate", it will have a different appearance in the web page.
 
@@ -24,7 +24,7 @@ To use this:
 
 6. If the script file is on another machine, you might want to ssh to it, make sure to pass your public ssh keyfile to that remote machine so you don't have to input your password while calling the script with ssh through this site.
 
-7. Don't write 'sudo rm -rf' kind of commands, it's not fun.
+7. Don't write 'sudo rm -rf' kind of commands or other commands you don't understand, they will harm your system.
 
 ## Getting started
 
@@ -96,5 +96,6 @@ $ rails server
 * [Stability] Write test cases.
 * [DevOps] CI | CD.
 * [New Feature] Schedule triggers to run periodically with calendar interface.
-* [Software engineering] Write documents.
+* [Software engineering] Write documentations.
 * [Translate] I18n
+* [Feature] Admin privilege for creating and update devices.
