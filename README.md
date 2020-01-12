@@ -5,10 +5,23 @@
 All source code is available jointly under the MIT License and the Beerware License. See
 [LICENSE.md](LICENSE.md) for details.
 
+## What it does
+
+You have a lot of smart devices, you want to control them but not with Big Brothers watching you, this is a web server you can set up on your raspberry pi (or whatever Linux that can run Ruby on Rails) and control your devices through.
+
+To use this:
+
+1. You need to figure out how to control your smart device by your self, write the command in whatever language you like and put the code in a single .py file or .sh file or .c .rb .rs file, then put them on any machine you like.
+2. Get into localhost:3000 of this rails app, then sign up a user, create a device in the web page.
+3. When creating the new device, fill in the file in step 1 in the form On Command / Off Command, it will be called like you are running it in the shell. For example, your file is at "/User/bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py"
+4. In the `device_type` field, if you fill one of "Camera, Alarm, Light, Gate", it will have a different appearance in the web page.
+5. If you are using a camera, this app loads the photo generated in the folder` /public/assets/images/captured.jpg`.
+
 ## Getting started
 
 
 If you're on Arm, especially on Raspberry Pi Debian, you might also want to install a package: `libffi-dev`. It's reported [here](https://github.com/ffi/ffi/issues/697) that there is no warning on missing ffi dependencies, which will cause segmentfault when running rails commands.
+
 To get started with the app, clone the repo and then install the needed gems:
 
 
@@ -69,3 +82,9 @@ $ rails server
 
 * User management with Devise gem
 ![user register](https://user-images.githubusercontent.com/10386624/72062154-2ae06b80-3312-11ea-93a6-35242036f91e.png)
+
+## TODO:
+* [Stability] Write test cases.
+* [DevOps] CI | CD.
+* [New Feature] Schedule triggers to run periodically with calendar interface.
+* [Software engineering] Write documents.
