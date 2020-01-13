@@ -21,8 +21,14 @@
     <div class="table-container">
       <table class="table is-striped is-fullwidth">
         <tbody>
-          <% @devices.each do |device| %>
-            <%= render 'device_item', device: device %>
+          <% @devices.each_slice(4) do |four_devices| %>
+            <% four_devices.each_with_index do |device, index| %>
+              <% if index % 4 <= 1 %>
+                <%= render 'device_item', device: device, color: 'info' %>
+              <% else %>
+                <%= render 'device_item', device: device, color: 'primary' %>
+              <% end %>
+            <% end %>
           <% end %>
         </tbody>
       </table>

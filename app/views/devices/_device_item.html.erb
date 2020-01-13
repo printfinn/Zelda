@@ -1,4 +1,5 @@
-<tr class="small-padding">
+<!-- <tr class="small-padding">
+	<% if device %>
 	<% if device.device_type.downcase == "gate" %>
 		<td>
 			<%= button_to device.device_name, device_path(device), method: "get", class: "button is-primary is-pulled-left shadowed is-fullwidth" %>		
@@ -61,5 +62,47 @@
 			</div>
 		</td>
 	<% end %>
+	<% end %>
+</tr> -->
+<% if device != nil %>
+	<tr class="small-padding">
 
-</tr>
+		<% if !%w[alarm camera].include?(device.device_type.downcase) %>
+			<td>
+				<%= button_to device.device_name, device_path(device), method: "get", class: "button is-#{color} is-pulled-left shadowed is-fullwidth" %>		
+			</td>
+			<td>
+				<div class="buttons is-centered">
+					<%= button_to "Open", on_device_path(device), method: "post", class: "button is-primary is-light is-outlined" %>
+				</div>
+			</td>
+			<td>
+				<div class="buttons is-centered">
+					<%= button_to "Close", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined" %>
+				</div>
+			</td>
+
+
+		<% elsif device.device_type.downcase == "alarm" %>
+			<td><%= button_to device.device_name, device_path(device), method: "get", class: "button is-warning shadowed is-fullwidth" %></td>
+			<td>
+				<div class="buttons is-centered"><%= button_to "Turn on", on_device_path(device), method: "post", class: "button is-primary is-light is-outlined " %>
+				</div>
+			</td>
+			<td>
+				<div class="buttons is-centered"><%= button_to "Turn off", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined " %>
+				</div>
+			</td>
+
+		<% elsif device.device_type.downcase == "camera" %>
+			<td><%= button_to device.device_name, device_path(device), method: "get", class: "button shadowed is-#{color} is-fullwidth" %></td>
+			<td><div class="buttons is-centered">	</div></td>
+			<td>
+				<div class="buttons is-centered">
+					<%= button_to "Capture", capture_device_path(device), method: "post", class: "button is-warning is-outlined is-light" %>
+				</div>
+			</td>
+
+		<% end %>
+	</tr>
+<% end %>
