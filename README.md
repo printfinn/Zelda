@@ -80,7 +80,7 @@ $ rails server
 ![front page desktop](https://user-images.githubusercontent.com/10386624/72062149-2a47d500-3312-11ea-8a5d-7e945eb329ab.png)
 
 * Single Tap Control Center
-![Control Center](https://user-images.githubusercontent.com/10386624/72143610-f633e900-33d1-11ea-9f78-dcc9a9a11c4c.png)
+![Control Center](https://user-images.githubusercontent.com/10386624/72250945-c4bc5700-3637-11ea-8a94-e165a7d9cec7.png)
 
 * Mobile frontpage with dropdown
 ![front page mobile](https://user-images.githubusercontent.com/10386624/72062151-2a47d500-3312-11ea-81da-b3c62cfd4fe0.png)

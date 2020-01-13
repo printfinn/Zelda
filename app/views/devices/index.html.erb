@@ -3,6 +3,11 @@
 <section class="section">
   <div class="container">
     <%= render 'head_nav' %>
+    <article class="message is-success">
+      <div class="message-body">
+        Add and control all your devices here.
+      </div>
+    </article>
     
     <% unless @photo_name.empty? %>
       <div class="box">
@@ -21,6 +26,10 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+
+    <div class="buttons is-right">
+      <%= link_to 'Add New Device', new_device_path, method: "get", class: "button shadowed is-link" %>
     </div>
 
   </div>

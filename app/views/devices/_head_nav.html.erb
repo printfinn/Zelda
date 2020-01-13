@@ -1,21 +1,3 @@
-<div class="columns is-mobile is-vcentered is-centered">
-
-  <div class="column is-three-quarters">
-    <div class="title is-4">
-      <%= yield(:nav_title) %>
-    </div>
-  </div>
-
-  <div class="column is-one-quarter">
-    <div class="buttons is-right">
-      <% if params[:action] == "index" %>
-        <%= button_to 'New device', new_device_path, method: "get", class: "button is-rounded is-success" %>        
-      <% end %>
-      
-      <% if %w[new edit].include? params[:action] %>
-        <%= button_to 'Back', devices_path, method: "get", class: "button is-dark",
-        data: { confirm: "Unsaved information will be lost." } %>        
-      <% end %>
-    </div>
-  </div>
+<div class="title is-3">
+  <%= yield(:nav_title) %>
 </div>

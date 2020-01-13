@@ -21,6 +21,7 @@ body {
 	margin-top: 2em;
 }
 
+
 .bordered {
 	border: 1px solid rgb(215, 58, 73);
 	border-radius: 0.3em;
@@ -61,6 +62,7 @@ body {
 		margin-top: 1em;
 	}
 }
+
 .bd-footer-link {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
@@ -81,74 +83,27 @@ body {
 	vertical-align: middle;
 }
 
-td > form > .button {
+td > form > .button, td > .buttons > form > .button {
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
+
 
 .shadowed {
 	transition: all 0.3s ease 0s;
 	text-align: left;
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
+
 .shadowed:active {
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
+
+
 tr.small-padding > td {
 	padding-left: 0.1em;
 	padding-right: 0.1em;
 }
-
-/*
-.container {
-	display: flex;
-	justify-content: center;
-}
-
-.col-main {
-	max-width: 1080px;
-	color: #9644cc;
-	width: calc(50% + 3vw);
-}
-h1 {
-	color: red;
-}
-
-.field > input {
-	font-size: 16px;
-	padding: 0.3em;
-	width: 100%;
-	border-radius: 0.2em;
-	border: solid 1px #66eedd;
-}
-
-.field > input:focus {
-  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
-	outline-color: none;
-}
-
-.field + .field {
-	margin-top: 1.2em;
-}
-
-.check-box-field {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.actions {
-	margin: 0.5em auto;
-	& > input {
-		font-size: 1.2em;
-		color: rgba(72, 155, 11, 1);
-		padding: 0.1em 0.7em;
-		border-radius: 0.2em;
-		background-image: linear-gradient(to bottom, #ddd, #66ccff);
-		border: 1px solid #66ccff;
-	}
-}
-
-*/

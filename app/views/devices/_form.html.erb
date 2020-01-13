@@ -27,6 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit yield(:button_text), class: "button is-link" %>
+    <%= link_to 'Back', devices_path, method: "get", class: "button is-dark", data: { confirm: "Will not save information." } %> 
+    <%= form.submit yield(:button_text), class: "button is-link is-pulled-right" %>
   </div>
 <% end %>
