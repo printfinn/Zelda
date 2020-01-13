@@ -88,10 +88,11 @@ td > form > .button, td > .buttons > form > .button {
 	padding-right: 0.5em;
 }
 
-
+.button.is-wider {
+	width: 90%;
+}
 .shadowed {
 	transition: all 0.3s ease 0s;
-	text-align: left;
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -99,7 +100,7 @@ td > form > .button, td > .buttons > form > .button {
   background-color: #2EE59D;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
-  transform: translateY(-7px);
+  transform: translateY(-4px);
 }
 
 
