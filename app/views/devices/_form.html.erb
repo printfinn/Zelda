@@ -26,6 +26,11 @@
     <%= form.text_field :off_command, autocomplete: "", class: "input is-info", type: "text", placeholder: "sh ~/path/to/your/device/script/off.sh" %>
   </div>
 
+  <div class="field">
+    <%= form.label :device_order, class: "label" %>
+    <%= form.text_field :device_order, autocomplete: "", class: "input is-info", type: "integer", placeholder: "0" %>
+  </div>
+
   <div class="actions">
     <%= link_to 'Back', devices_path, method: "get", class: "button is-dark", data: { confirm: "Will not save information." } %> 
     <%= form.submit yield(:button_text), class: "button is-link is-pulled-right" %>

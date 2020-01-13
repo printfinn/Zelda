@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@devices = Device.all.order(device_type: :desc)
+		@devices = Device.all.order(device_order: :asc)
 		@photo_name = ""
 
 		# This session is set in trigger_capture_command method.
@@ -77,7 +77,7 @@ class DevicesController < ApplicationController
 
 	private
 		def device_params
-	    params.require(:device).permit(:device_name, :device_type, :device_location, :on_command, :off_command)
+	    params.require(:device).permit(:device_name, :device_type, :device_location, :on_command, :off_command, :device_order)
 	  end
 
 	  def trigger
