@@ -92,6 +92,27 @@ $ rails server
 * User management with Devise gem
 ![user register](https://user-images.githubusercontent.com/10386624/72062154-2ae06b80-3312-11ea-93a6-35242036f91e.png)
 
+
+## Bonus:
+If you ever want to run it on a raspberry pi, here is a systemd config you can use (with rbenv):
+
+```
+[Unit]
+Description=Smart Garage Rails Service
+After=syslog.target
+
+[Service]
+ExecStart=/home/pi/.rbenv/bin/rbenv exec bundle exec rails server -b 0.0.0.0
+WorkingDirectory=/home/pi/smart-garage-rails
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## TODO:
 * [Stability] Write test cases.
 * [DevOps] CI | CD.
@@ -99,3 +120,5 @@ $ rails server
 * [Software engineering] Write documentations.
 * [Translate] I18n
 * [Feature] Admin privilege for creating and update devices.
+
+
