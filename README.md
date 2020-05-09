@@ -1,9 +1,5 @@
 # Ruby on Rails Smart Home Web Interface application
 
-## License
-
-All source code is available jointly under the MIT License and the Beerware License.
-
 ## What it does
 
 You have a lot of smart devices, you want to control them but not with Big Brothers watching you, this is a web server you can set up on your raspberry pi (or whatever Linux that can run Ruby on Rails) and control your devices through.
@@ -71,7 +67,7 @@ $ rails server
 
 * System dependencies: Linux MacOS
 
-* Rails version: 6.0.2.1
+* Rails version: 6.0.3
 
 ## Screen Shot
 
@@ -123,3 +119,6 @@ WantedBy=multi-user.target
 * [Feature] Admin privilege for creating and update devices.
 
 
+## License
+
+MIT
