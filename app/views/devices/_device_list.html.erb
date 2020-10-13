@@ -14,9 +14,9 @@
           <th><%= device.device_name %></th>
           <td><%= button_to 'Show', device_path(device), method: "get", class: "button is-success" %></td>
           <td><%= button_to 'Edit', edit_device_path(device), method: "get", class: "button is-info" %></td>
-          <td><%= button_to 'Destroy', device_path(device), method: "delete", class: "button is-danger", 
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %></td>
+          <td><%= button_to 'Destroy', device_path(device), class: "button is-danger",
+                          method: :delete,
+                          data: {confirm: 'Are you sure?'} %></td>
         </tr>
       <% end %>
     </tbody>

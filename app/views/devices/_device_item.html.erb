@@ -1,30 +1,30 @@
 <% if device != nil %>
-<tr class="small-padding">
-		<td>
-			<% if device.device_type.downcase != 'alarm' %>
-				<%= button_to device.device_name, device_path(device), method: "get", class: "button is-#{color}  shadowed is-wider" %>	
-			<% elsif device.device_type.downcase == "alarm" %>
-				<%= button_to device.device_name, device_path(device), method: "get", class: "button is-warning shadowed is-wider" %>
-			<% end %>
-		</td>
+  <tr class="small-padding">
+    <td>
+      <% if device.device_type.downcase != "alarm" %>
+        <%= button_to device.device_name, device_path(device), method: "get", class: "button is-#{color}  shadowed is-wider" %>
+      <% elsif device.device_type.downcase == "alarm" %>
+        <%= button_to device.device_name, device_path(device), method: "get", class: "button is-warning shadowed is-wider" %>
+      <% end %>
+    </td>
 
-		<td>
-			<div class="buttons is-centered">
-				<% if device.device_type.downcase != "camera" %>
-					<%= button_to "Open", on_device_path(device), method: "post", class: "button is-primary is-light is-outlined" %>
-				<% end %>
-			</div>
-		</td>
+    <td>
+      <div class="buttons is-centered">
+        <% if device.device_type.downcase != "camera" %>
+          <%= button_to "Open", on_device_path(device), method: "post", class: "button is-primary is-light is-outlined" %>
+        <% end %>
+      </div>
+    </td>
 
-		<td>
-			<div class="buttons is-centered">
-				<% if device.device_type.downcase != "camera" %>
-					<%= button_to "Close", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined" %>
-				<% elsif device.device_type.downcase == "camera" %>
-					<%= button_to "Capture", capture_device_path(device), method: "post", class: "button is-warning is-outlined is-light" %>
-				<% end %>
-			</div>
-		</td>
+    <td>
+      <div class="buttons is-centered">
+        <% if device.device_type.downcase != "camera" %>
+          <%= button_to "Close", off_device_path(device), method: "post", class: "button is-danger is-light is-outlined" %>
+        <% elsif device.device_type.downcase == "camera" %>
+          <%= button_to "Capture", capture_device_path(device), method: "post", class: "button is-warning is-outlined is-light" %>
+        <% end %>
+      </div>
+    </td>
 
-	</tr>
+  </tr>
 <% end %>

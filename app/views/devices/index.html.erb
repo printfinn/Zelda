@@ -8,7 +8,6 @@
         Add and control all your devices here.
       </div>
     </article>
-    
     <% unless @photo_name.empty? %>
       <div class="box">
         <div class="title is-4 has-text-centered"><%= @photo_name %></div>
@@ -17,7 +16,6 @@
         </figure>
       </div>
     <% end %>
-
     <div class="table-container">
       <table class="table is-striped is-fullwidth">
         <tbody>
@@ -33,10 +31,8 @@
         </tbody>
       </table>
     </div>
-
     <div class="buttons is-right">
       <%= link_to 'Add New Device', new_device_path, method: "get", class: "button shadowed is-link" %>
     </div>
-
   </div>
 </section>

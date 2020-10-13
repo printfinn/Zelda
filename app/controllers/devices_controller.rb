@@ -1,14 +1,13 @@
+# frozen_string_literal: true
+
 class DevicesController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @devices = Device.all.order(device_order: :asc)
     @photo_name = ""
-
     # This session is set in trigger_capture_command method.
-    if session[:photo_name] && !session[:photo_name].empty?
-      @photo_name = session[:photo_name]
-    end
+    @photo_name = session[:photo_name] if session[:photo_name] && !session[:photo_name].empty?
     session[:photo_name] = ""
   end
 
@@ -23,7 +22,7 @@ class DevicesController < ApplicationController
       flash[:info] = "You have successfully created a new device: #{@device.device_name}"
       redirect_to @device
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -42,7 +41,7 @@ class DevicesController < ApplicationController
       flash[:info] = "You have successfully updated #{@device.device_name}"
       redirect_to @device
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -73,30 +72,36 @@ class DevicesController < ApplicationController
   end
 
   private
-
-  def device_params
-    params.require(:device).permit(:device_name, :device_type, :device_location, :on_command, :off_command, :device_order)
-  end
-
-  def trigger
-    @device = Device.find(params[:id])
-    instruction = params[:action].split('_')[1]
-    # action can be: trigger_on_command / trigger_off_command
-    cmd = case instruction
-          when "on"
-            @device.on_command
-          when "off"
-            @device.off_command
-          else
-            ""
-          end
-
-    job1 = fork do
-      system(cmd)
+    def device_params
+      params.require(:device).permit(
+        :device_name,
+        :device_type,
+        :device_location,
+        :on_command,
+        :off_command,
+        :device_order
+      )
     end
-    Process.detach(job1)
-    message = "Turning #{@device.device_name} #{instruction.upcase}"
-    flash[:primary] = message
-    redirect_to devices_path
-  end
+
+    def trigger
+      @device = Device.find(params[:id])
+      instruction = params[:action].split("_")[1]
+      # action can be: trigger_on_command / trigger_off_command
+      # cmd = case instruction
+      #       when 'on'
+      #         @device.on_command
+      #       when 'off'
+      #         @device.off_command
+      #       else
+      #         ''
+      #       end
+      if instruction != ""
+        job1 = fork do
+          system(@device.send("#{instruction}_command"))
+        end
+      end
+      Process.detach(job1)
+      flash[:primary] = "Turning #{@device.device_name} #{instruction}"
+      redirect_to devices_path
+    end
 end

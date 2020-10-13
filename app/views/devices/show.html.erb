@@ -1,49 +1,47 @@
 <% provide(:page_title, @device.device_name) %>
 <% provide(:nav_title, @device.device_name) %>
 <section class="section">
-	<div class="container">
-		<%= render 'head_nav' %>
-
-		<div class="box">
-			<div class="table-container">
-				<table class="table is-striped is-fullwidth">
-					<tbody>
-						<tr>
-							<th>Name</th>
-							<td><%= @device.device_name %></td>
-						</tr>
-						<tr>
-							<th>Type</th>
-							<td><%= @device.device_type %></td>
-						</tr>
-						<tr>
-							<th>Location</th>
-							<td><%= @device.device_location %></td>
-						</tr>
-						<tr>
-							<th>On command</th>
-							<td><%= @device.on_command %></td>
-						</tr>
-						<tr>
-							<th>Off command</th>
-							<td><%= @device.off_command %></td>
-						</tr>
-						<tr>
-							<th>Order</th>
-							<td><%= @device.device_order %> (Smaller number is former)</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		
-		<br />
-		<div class="buttons is-right">
-			<%= button_to "Back", devices_path, method: "get", class: "button is-dark is-normal" %>
-			<%= button_to 'Edit', edit_device_path, method: "get", class: "button is-info" %>	
-			<%= button_to 'Destroy', device_path, method: "delete", class: "button is-danger", 
-	        method: :delete,
-	        data: { confirm: "This will remove your device:\n\n#{@device.device_name}\n\nYou can't find it back, are you sure?" } %>
-		</div>
-	</div>
+  <div class="container">
+    <%= render 'head_nav' %>
+    <div class="box">
+      <div class="table-container">
+        <table class="table is-striped is-fullwidth">
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <td><%= @device.device_name %></td>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <td><%= @device.device_type %></td>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td><%= @device.device_location %></td>
+            </tr>
+            <tr>
+              <th>On command</th>
+              <td><%= @device.on_command %></td>
+            </tr>
+            <tr>
+              <th>Off command</th>
+              <td><%= @device.off_command %></td>
+            </tr>
+            <tr>
+              <th>Order</th>
+              <td><%= @device.device_order %> (Smaller number is former)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br />
+    <div class="buttons is-right">
+      <%= button_to "Back", devices_path, method: "get", class: "button is-dark is-normal" %>
+      <%= button_to 'Edit', edit_device_path, method: "get", class: "button is-info" %>
+      <%= button_to 'Destroy', device_path, method: "delete", class: "button is-danger",
+        method: :delete,
+        data: { confirm: "This will remove your device:\n\n#{@device.device_name}\n\nYou can't find it back, are you sure?" } %>
+    </div>
+  </div>
 </section>
