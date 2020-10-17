@@ -1,13 +1,13 @@
-<div class="hero is-success is-fullheight">
+<div class="hero is-medium is-primary is-bold is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Automate Garage
+        Smart Home
       </h1>
-      <h2 class="subtitle">
-        with Smart Garage
-      </h2>
-      <%= button_to "Try it for free", new_user_registration_path, method: "get", class: "button is-info is-light is-rounded" %>
+      <div class="buttons is-centered">
+        <%= button_to "Sign Up", new_user_registration_path, method: "get", class: "button is-info is-light is-rounded" %>
+        <%= button_to "Sign In", new_user_session_path, method: "get", class: "button is-warning" %>
+      </div>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def full_title(page_title = "")
-    base_title = "Smart Garage"
+    base_title = "Smart Home"
     if page_title.empty?
       base_title
     else
