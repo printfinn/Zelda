@@ -67,7 +67,7 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
     cmd = @device.on_command
     system(cmd)
-    session[:photo_name] = "Photo from #{@device.device_name}"
+    session[:photo_name] = "#{@device.device_name}"
     redirect_to devices_path # camera_photo_device_path
   end
 
@@ -87,21 +87,13 @@ class DevicesController < ApplicationController
       @device = Device.find(params[:id])
       instruction = params[:action].split("_")[1]
       # action can be: trigger_on_command / trigger_off_command
-      # cmd = case instruction
-      #       when 'on'
-      #         @device.on_command
-      #       when 'off'
-      #         @device.off_command
-      #       else
-      #         ''
-      #       end
       if instruction != ""
         job1 = fork do
           system(@device.send("#{instruction}_command"))
         end
       end
       Process.detach(job1)
-      flash[:primary] = "Turning #{@device.device_name} #{instruction}"
+      flash[:primary] = t(".turn_#{instruction}").concat("#{@device.device_name}")
       redirect_to devices_path
     end
 end

@@ -1,10 +1,10 @@
-<div class="hero is-medium is-dark is-bold is-fullheight-with-navbar">
+<div class="hero is-medium is-bold is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        Hello!
+        <%= t ".welcome_line" %>
       </h1>
-      <%= button_to "Your Devices", devices_path, method: "get", class: "button is-dark is-inverted is-rounded" %>
+      <%= button_to t(:your_devices), devices_path, method: "get", class: "button is-dark is-rounded" %>
     </div>
   </div>
 </div>

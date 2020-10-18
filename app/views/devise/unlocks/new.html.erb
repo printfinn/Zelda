@@ -1,18 +1,19 @@
-<% provide(:page_title, "Create An Account") %>
+<% provide(:page_title, t(".resend_unlock_instructions")) %>
 <section class="section">
   <div class="container">
-    <div class="title">Resend unlock instructions</div>
+    <div class="title is-4"><%= t(".resend_unlock_instructions") %></div>
 
     <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <%= f.label :email, class: "label required-field" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "Your email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Resend unlock instructions", class: "button is-link"  %>
+        <%= f.submit t('.resend_unlock_instructions'), class: "button is-link"  %>
+
       </div>
     <% end %>
 

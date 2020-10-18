@@ -1,18 +1,18 @@
-<% provide(:page_title, "Sign In") %>
+<% provide(:page_title, t('.sign_in')) %>
 <section class="section">
   <div class="container">
-    <div class="title">Sign in</div>
+    <div class="title"><%= t(:sign_in) %></div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="field">
         <%= f.label :email, class: "label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "Your email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text" %>
       </div>
 
       <div class="field">
         <%= f.label :password, class: "label" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "input is-info", type: "password", placeholder: "Your password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "input is-info", type: "password" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -26,7 +26,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Sign in", class: "button is-warning" %>
+        <%= f.submit t('.sign_in'), class: "button is-warning" %>
       </div>
     <% end %>
 

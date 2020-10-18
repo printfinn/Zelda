@@ -30,4 +30,41 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  smart_home: "Smart Home"
+  your_devices: "Your Devices"
+  home: "Home"
+  my_profile: "My Profile"
+  sign_in: "Sign in"
+  sign_up: "Sign up"
+  sign_out: "Sign out"
+
+  static_pages:
+    signed_in_home:
+      welcome_line: "Hello!"
+  devices:
+    device_item:
+      open: "Open"
+      close: "Close"
+      capture: "Capture"
+    index:
+      add_new_device: "Add New Device"
+    form:
+      device_name: "Device name"
+      device_type: "Device type"
+      device_location: "Device location"
+      on_command: "On command"
+      off_command: "Off command"
+      device_order: "Device order"
+      smaller_is_former: "(Smaller is former)"
+    show:
+      device_name: "Device name"
+      device_type: "Device type"
+      device_location: "Device location"
+      on_command: "On command"
+      off_command: "Off command"
+      device_order: "Device order"
+      smaller_is_former: "(Smaller is former)"
+    trigger_on_command:
+      turn_on: "Opening"
+    trigger_off_command:
+      turn_off: "Closing"

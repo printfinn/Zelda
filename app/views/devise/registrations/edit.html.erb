@@ -1,14 +1,14 @@
 <% provide(:page_title, "Modify Profile") %>
 <section class="section">
   <div class="container">
-    <div class="title">Modify <%= resource_name.to_s.humanize %> Profile</div>
+    <div class="title"><%= t('.title', resource: resource.model_name.human) %></div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <%= f.label :email, class: "label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "New Email Address" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,25 +16,25 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :current_password, "Current password", class: "label required-field" %>
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "input is-info", type: "password", placeholder: "Your current password (Required)" %>
+        <%= f.label :current_password, class: "label required-field" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "input is-info", type: "password" %>
       </div>
 
       <div class="field">
-        <%= f.label :password , "New Password", class: "label" %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "(Optional)" %>
+        <%= f.label :password, class: "label" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", type: "password" %>
         <% if @minimum_password_length %>
-          <em>(At least <%= @minimum_password_length %> characters)</em>
+          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
         <% end %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, class: "label" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", type: "password", placeholder: "(Optional)" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", type: "password" %>
       </div>
 
       <div class="actions buttons">
-        <%= f.submit "Update", class: "button is-info button-is-right" %>
+        <%= f.submit t('.update'), class: "button is-info button-is-right" %>
       </div>
     <% end %>
   </div>
@@ -44,11 +44,11 @@
     <div class="content bordered is-medium">
       <div class="level">
         <div class="level-left">
-          <p class="level-item">Delete your account</p>
+          <p class="level-item"><%= t('.cancel_my_account') %></p>
         </div>
         <div class="level-right">
           <div class="level-item">
-            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button is-danger is-normal" %>
+            <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "button is-danger is-normal" %>
           </div>
         </div>
       </div>

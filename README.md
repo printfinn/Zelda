@@ -22,6 +22,9 @@ To use this:
 
 7. Don't write 'sudo rm -rf' kind of commands or other commands you don't understand, they will harm your system.
 
+## I18n Supports
+Zelda supports Chinese and English now.
+
 ## Getting started
 
 
@@ -115,7 +118,6 @@ WantedBy=multi-user.target
 * [DevOps] CI | CD.
 * [New Feature] Schedule triggers to run periodically with calendar interface.
 * [Software engineering] Write documentations.
-* [Translate] I18n
 * [Feature] Admin privilege for creating and update devices.
 
 

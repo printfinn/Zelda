@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def full_title(page_title = "")
-    base_title = "Smart Home"
+    base_title = t(:smart_home)
     if page_title.empty?
       base_title
     else
