@@ -19,7 +19,7 @@ class DevicesController < ApplicationController
     @device = Device.new(device_params)
 
     if @device.save
-      flash[:info] = "You have successfully created a new device: #{@device.device_name}"
+      flash[:info] = t(".success", name: @device.device_name)
       redirect_to @device
     else
       render "new"
@@ -38,7 +38,7 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
 
     if @device.update(device_params)
-      flash[:info] = "You have successfully updated #{@device.device_name}"
+      flash[:info] = t(".success")
       redirect_to @device
     else
       render "edit"
@@ -48,10 +48,10 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     if @device.destroy
-      flash[:info] = "You have successfully removed #{@device.device_name}."
+      flash[:info] = t(".success")
       redirect_to devices_path
     else
-      flash[:alarm] = "Something is wrong, please contact admin or create a new issue on Github."
+      flash[:alarm] = t(".failure")
     end
   end
 

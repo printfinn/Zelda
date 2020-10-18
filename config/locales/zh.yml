@@ -1,39 +1,56 @@
 zh:
-  smart_home: "智慧家庭"
-  your_devices: "你的设备"
-  home: "主页"
-  my_profile: "帐号"
-  sign_in: "登录"
-  sign_up: "注册"
-  sign_out: "登出"
+  smart_home: 智慧家庭
+  your_devices: 你的设备
+  home: 主页
+  my_profile: 帐号
+  sign_in: 登录
+  sign_up: 注册
+  sign_out: 登出
 
   static_pages:
     signed_in_home:
-      welcome_line: "你好"
+      welcome_line: 你好
   devices:
     device_item:
-      open: "打开"
-      close: "关闭"
-      capture: "拍照"
+      open: 打开
+      close: 关闭
+      capture: 拍照
     index:
-      add_new_device: "增加设备"
+      add_new_device: 增加设备
     form:
-      device_name: "设备名"
-      device_type: "类型"
-      device_location: "位置"
-      on_command: "开启命令"
-      off_command: "关闭命令"
-      device_order: "顺序"
-      smaller_is_former: "(小数排在前面)"
+      device_name: 设备名
+      device_type: 类型
+      device_location: 位置
+      on_command: 开启命令
+      off_command: 关闭命令
+      device_order: 顺序
+      smaller_is_former: (小数排在前面)
+      will_not_save: 将不会保存任何信息
+      back: 后退
+    new:
+      title: 增加设备
     show:
-      device_name: "设备名"
-      device_type: "类型"
-      device_location: "位置"
-      on_command: "开启命令"
-      off_command: "关闭命令"
-      device_order: "顺序"
-      smaller_is_former: "(小数排在前面)"
+      device_name: 设备名
+      device_type: 类型
+      device_location: 位置
+      on_command: 开启命令
+      off_command: 关闭命令
+      device_order: 顺序
+      smaller_is_former: (小数排在前面)
+      edit: 编辑
+      destroy: 删除
+      confirmation: "即将删除设备: %{device_name}, 删除后将无法找回, 确定要删除吗?"
+    edit:
+      title: 更新设备
+      update: 更新此设备
+    create:
+      success: "成功创建了新设备: %{name}"
+    update:
+      success: "更新成功"
+    destroy:
+      success: "删除成功"
+      failure: "删除失败, 错误代码233, 请联系管理员"
     trigger_on_command:
-      turn_on: "打开"
+      turn_on: 打开
     trigger_off_command:
-      turn_off: "关闭"
+      turn_off: 关闭

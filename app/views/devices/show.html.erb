@@ -1,8 +1,7 @@
 <% provide(:page_title, @device.device_name) %>
-<% provide(:nav_title, @device.device_name) %>
 <section class="section">
   <div class="container">
-    <%= render 'head_nav' %>
+    <div class="title is-3"><%= @device.device_name %></div>
     <div class="box">
       <div class="table-container">
         <table class="table is-striped is-fullwidth">
@@ -37,11 +36,10 @@
     </div>
     <br />
     <div class="buttons is-right">
-      <%= button_to "Back", devices_path, method: "get", class: "button is-dark is-normal" %>
-      <%= button_to 'Edit', edit_device_path, method: "get", class: "button is-info" %>
-      <%= button_to 'Destroy', device_path, method: "delete", class: "button is-danger",
+      <%= button_to t(".edit"), edit_device_path, method: "get", class: "button is-info" %>
+      <%= button_to t(".destroy"), device_path, method: "delete", class: "button is-danger",
         method: :delete,
-        data: { confirm: "This will remove your device:\n\n#{@device.device_name}\n\nYou can't find it back, are you sure?" } %>
+        data: { confirm: t(".confirmation", device_name: @device.device_name) } %>
     </div>
   </div>
 </section>

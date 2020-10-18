@@ -1,9 +1,10 @@
-<% provide(:page_title, "Edit Device") %>
-<% provide(:button_text, "Update this device") %>
-<% provide(:nav_title, "Update Device") %>
+<% provide(:page_title, t(".title")) %>
+<% provide(:button_text, t(".update")) %>
 <section class="section">
   <div class="container">
-    <%= render 'head_nav' %>
-    <%= render 'form' %>
+    <div class="title is-3">
+      <%= t(".title") %>
+    </div>
+    <%= render "form" %>
   </div>
 </section>

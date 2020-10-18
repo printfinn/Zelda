@@ -26,7 +26,7 @@
     <%= form.label t(".smaller_is_former"), class: "label" %>
   </div>
   <div class="actions">
-    <%= link_to 'Back', devices_path, method: "get", class: "button is-dark", data: { confirm: "Will not save information." } %>
+    <%= link_to t(".back"), devices_path, method: "get", class: "button is-dark", data: { confirm: t(".will_not_save") } %>
     <%= form.submit yield(:button_text), class: "button is-link is-pulled-right" %>
   </div>
 <% end %>

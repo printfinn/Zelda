@@ -56,6 +56,10 @@ en:
       off_command: "Off command"
       device_order: "Device order"
       smaller_is_former: "(Smaller is former)"
+      will_not_save: "Will not save any information"
+      back: "Back"
+    new:
+      title: "New Device"
     show:
       device_name: "Device name"
       device_type: "Device type"
@@ -64,6 +68,19 @@ en:
       off_command: "Off command"
       device_order: "Device order"
       smaller_is_former: "(Smaller is former)"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirmation: "This will remove device: %{device_name}, you can't find it back, are you sure?"
+    edit:
+      title: "Update Device"
+      update: "Update this device"
+    create:
+      success: "Successfully created a new device: %{name}"
+    update:
+      success: "Successfully updated the device"
+    destroy:
+      success: "Successfully removed the device"
+      failure: "Something is wrong, error code: 233, please contact admin."
     trigger_on_command:
       turn_on: "Opening"
     trigger_off_command:

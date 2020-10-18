@@ -1,4 +1,4 @@
-<% provide(:page_title, "Modify Profile") %>
+<% provide(:page_title, t('.title', resource: resource.model_name.human)) %>
 <section class="section">
   <div class="container">
     <div class="title"><%= t('.title', resource: resource.model_name.human) %></div>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="container">
-    <div class="title is-4">Danger Zone</div>
+    <div class="title is-4"><%= t(".danger_zone") %></div>
     <div class="content bordered is-medium">
       <div class="level">
         <div class="level-left">
