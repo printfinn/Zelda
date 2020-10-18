@@ -8,28 +8,28 @@
         <table class="table is-striped is-fullwidth">
           <tbody>
             <tr>
-              <th>Name</th>
+              <th><%= t(".device_name") %></th>
               <td><%= @device.device_name %></td>
             </tr>
             <tr>
-              <th>Type</th>
+              <th><%= t(".device_type") %></th>
               <td><%= @device.device_type %></td>
             </tr>
             <tr>
-              <th>Location</th>
+              <th><%= t(".device_location") %></th>
               <td><%= @device.device_location %></td>
             </tr>
             <tr>
-              <th>On command</th>
+              <th><%= t(".on_command") %></th>
               <td><%= @device.on_command %></td>
             </tr>
             <tr>
-              <th>Off command</th>
+              <th><%= t(".off_command") %></th>
               <td><%= @device.off_command %></td>
             </tr>
             <tr>
-              <th>Order</th>
-              <td><%= @device.device_order %> (Smaller number is former)</td>
+              <th><%= t(".device_order") %></th>
+              <td><%= @device.device_order %><%= t(".smaller_is_former") %></td>
             </tr>
           </tbody>
         </table>

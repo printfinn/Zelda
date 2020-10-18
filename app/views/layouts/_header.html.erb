@@ -1,9 +1,9 @@
 <header>
-  <nav class="navbar is-light is-fixed-top">
+  <nav class="navbar is-warning is-fixed-top">
     <div class="container">
 
       <div class="navbar-brand">
-        <%= link_to "Smart Home", root_path, class: "navbar-item" %>
+        <%= link_to t(:smart_home), root_path, class: "navbar-item" %>
         <span class="navbar-burger burger" data-target="navbarMenuHeroC">
           <span></span>
           <span></span>
@@ -15,11 +15,11 @@
 
         <div class="navbar-start">
           <div class="navbar-item">
-            <%= link_to "Home", root_path, class: "navbar-item" %>
+            <%= link_to t(:home), root_path, class: "navbar-item" %>
             <%#= link_to "Documentation", static_pages_documentation_path, class: "navbar-item" %>
             <% if user_signed_in? %>
               <%#= link_to "Control Center", devices_path, class: "navbar-item" %>
-              <%= link_to "My Profile", edit_user_registration_path, class: "navbar-item" %>
+              <%= link_to t(:my_profile), edit_user_registration_path, class: "navbar-item" %>
             <% end %>
           </div>
         </div>
@@ -27,13 +27,13 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <% if user_signed_in? %>
-              <%= button_to "Sign out", destroy_user_session_path, method: "delete", class: "button is-light" %>
+              <%= button_to t(:sign_out), destroy_user_session_path, method: "delete", class: "button is-light" %>
             <% end %>
 
             <% unless user_signed_in? %>
               <div class="buttons">
-                <%= button_to "Sign In", new_user_session_path, method: "get", class: "button is-warning" %>
-                <%= button_to "Try It For Free!", new_user_registration_path, method: "get", class: "button is-light" %>
+                <%= button_to t(:sign_in), new_user_session_path, method: "get", class: "button is-warning" %>
+                <%= button_to t(:sign_up), new_user_registration_path, method: "get", class: "button is-light" %>
               </div>
             <% end %>
           </div>

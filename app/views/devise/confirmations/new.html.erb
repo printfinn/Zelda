@@ -1,18 +1,18 @@
-<% provide(:page_title, "Resend Confirmation Email") %>
+<% provide(:page_title, t('.resend_confirmation_instructions')) %>
 <section class="section">
   <div class="container">
-    <div class="title is-4">Didn't receive confirmation email?</div>
+    <div class="title is-4"><%= t('.resend_confirmation_instructions') %></div>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email, class: "label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", placeholder: "address@email.com", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <%= f.label :email, class: "label required-field" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", type: "text", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Resend confirmation instructions", class: "button is-link" %>
+        <%= f.submit t('.resend_confirmation_instructions'), class: "button is-link" %>
       </div>
     <% end %>
 
