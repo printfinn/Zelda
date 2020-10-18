@@ -1,4 +1,4 @@
-# Ruby on Rails Smart Home Web Interface application
+# Zelda: A cloud free smart home web interface
 
 ## What it does
 
@@ -10,9 +10,9 @@ To use this:
 
 1. You need to figure out how to control your smart device first by your self, write the command to simulate this procedure in whatever language you like and put the code in a single .py file or .sh file or .c .rb .rs file, then put them on any machine you like.
 
-2. Sign up a user, create a device in the web page.
+2. Sign up a user, use your rails console to check the activation link and paste it to browser.
 
-3. When creating the new device, fill the file in step 1 in the On Command / Off Command form, it will be called by this site as if you are running it in the shell. For example, your file is at "/User/Bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py" (don't put the quotes, just write the command as if you are writing them in the shell).
+3. Create a device in the web page, when creating the new device, fill the file in step 1 in the On Command / Off Command form, it will be called by this site as if you are running it in the shell. For example, your file is at "/User/Bob/scripts/Turn_On.py", then you should fill the form like "python /User/bob/scripts/Turn_On.py" (don't put the quotes, just write the command as if you are writing them in the shell).
 
 4. In the `device_type` field, if you fill it with any of "Camera, Alarm, Light, Gate", it will have a different appearance in the web page.
 
@@ -63,11 +63,11 @@ $ rails server
 
 
 
-* Ruby version: 2.7.0
+* Ruby version: 2.7.2
 
 * System dependencies: Linux MacOS
 
-* Rails version: 6.0.3
+* Rails version: 6.0.3.4
 
 ## Screen Shot
 
