@@ -74,23 +74,20 @@ $ rails server
 
 ## Screen Shot
 
-* Responsive Design
-* Desktop frontpage
-<img src="https://user-images.githubusercontent.com/10386624/72062149-2a47d500-3312-11ea-8a5d-7e945eb329ab.png" alt="front page desktop" width="640x"/>
+* Home page
+<img src="https://user-images.githubusercontent.com/10386624/96367954-75392780-1183-11eb-9f23-3328bb276e05.png" alt="front page mobile" width="320x"/>
 
-* Single Tap Control Center
-<img src="https://user-images.githubusercontent.com/10386624/72250945-c4bc5700-3637-11ea-8a94-e165a7d9cec7.png" alt="Control Center" width="640x"/>
+* Your devices page
+<img src="https://user-images.githubusercontent.com/10386624/96367958-779b8180-1183-11eb-9fe2-21a775cfb435.png" alt="Control Center" width="320x"/>
 
-* Mobile frontpage with dropdown
-<img src="https://user-images.githubusercontent.com/10386624/72062151-2a47d500-3312-11ea-81da-b3c62cfd4fe0.png" alt="front page mobile" width="320x"/>
+* Home page (after sign in)
+<img src="https://user-images.githubusercontent.com/10386624/96367956-7702eb00-1183-11eb-8de9-6c1484fd8730.png" alt="front page mobile" width="320x"/>
 
-* Devices list
-<img src="https://user-images.githubusercontent.com/10386624/72062152-2ae06b80-3312-11ea-99ae-866c7f138f15.png" alt="devices list" width="320x"/>
+* Change password
+<img src="https://user-images.githubusercontent.com/10386624/96367960-779b8180-1183-11eb-9d07-9f519caa01ff.png" alt="change password" width="320x"/>
 
-<img src="https://user-images.githubusercontent.com/10386624/72062153-2ae06b80-3312-11ea-940e-447b78c7e59e.png" alt="create a device" width="320x"/>
-
-* User management with Devise gem
-<img src="https://user-images.githubusercontent.com/10386624/72062154-2ae06b80-3312-11ea-93a6-35242036f91e.png" alt="user register" width="320x"/>
+* User Login
+<img src="https://user-images.githubusercontent.com/10386624/96367955-766a5480-1183-11eb-9bc1-fba00245bb39.png" alt="user register" width="320x"/>
 
 
 ## Bonus:
