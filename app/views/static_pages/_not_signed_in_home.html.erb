@@ -5,8 +5,8 @@
         <%= t(:smart_home)%>
       </h1>
       <div class="buttons is-centered">
-        <%= button_to t(:sign_up), new_user_registration_path, method: "get", class: "button is-info is-light is-rounded" %>
-        <%= button_to t(:sign_in), new_user_session_path, method: "get", class: "button is-warning" %>
+        <%= link_to t(:sign_up), new_user_registration_path, class: "button is-info is-light is-rounded" %>
+        <%= link_to t(:sign_in), new_user_session_path, class: "button is-warning" %>
       </div>
     </div>
   </div>

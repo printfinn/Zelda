@@ -1,5 +1,14 @@
 <footer class="footer">
-  <div class="content has-text-centered">
-    <em>Made with love</em> by <%= link_to "Finn", "https://github.com/printfinn", target: "_blank", rel: 'nofollow' %>.
-  </div>
+  <section class="container">
+    <div class="tabs is-right">
+      <ul>
+        <li class="<%= "is-active" unless I18n.locale == :en %>">
+          <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+        </li>
+        <li class="<%= "is-active" unless I18n.locale == :zh %>">
+          <%= link_to_unless I18n.locale == :zh, "中文", locale: :zh %>
+        </li>
+      </ul>
+    </div>
+  </section>
 </footer>

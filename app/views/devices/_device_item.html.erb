@@ -2,9 +2,9 @@
   <tr class="small-padding">
     <td>
       <% if device.device_type.downcase != "alarm" %>
-        <%= button_to device.device_name, device_path(device), method: "get", class: "button is-#{color} shadowed is-wider" %>
+        <%= link_to device.device_name, device_path(device), class: "button is-#{color} shadowed is-wider" %>
       <% elsif device.device_type.downcase == "alarm" %>
-        <%= button_to device.device_name, device_path(device), method: "get", class: "button is-warning shadowed is-wider" %>
+        <%= link_to device.device_name, device_path(device), class: "button is-warning shadowed is-wider" %>
       <% end %>
     </td>
 

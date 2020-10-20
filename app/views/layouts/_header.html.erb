@@ -32,8 +32,8 @@
 
             <% unless user_signed_in? %>
               <div class="buttons">
-                <%= button_to t(:sign_in), new_user_session_path, method: "get", class: "button is-warning" %>
-                <%= button_to t(:sign_up), new_user_registration_path, method: "get", class: "button is-light" %>
+                <%= link_to t(:sign_in), new_user_session_path, class: "button is-warning" %>
+                <%= link_to t(:sign_up), new_user_registration_path, class: "button is-light" %>
               </div>
             <% end %>
           </div>

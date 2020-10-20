@@ -36,8 +36,8 @@
     </div>
     <br />
     <div class="buttons is-right">
-      <%= button_to t(".edit"), edit_device_path, method: "get", class: "button is-info" %>
-      <%= button_to t(".destroy"), device_path, method: "delete", class: "button is-danger",
+      <%= link_to t(".edit"), edit_device_path, class: "button is-info" %>
+      <%= button_to t(".destroy"), device_path, class: "button is-danger",
         method: :delete,
         data: { confirm: t(".confirmation", device_name: @device.device_name) } %>
     </div>
