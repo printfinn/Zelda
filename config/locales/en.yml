@@ -1,87 +1,57 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  smart_home: "Smart Home"
-  your_devices: "Your Devices"
-  home: "Home"
-  my_profile: "My Profile"
-  sign_in: "Sign in"
-  sign_up: "Sign up"
-  sign_out: "Sign out"
-
+  devices:
+    create:
+      success: 'Successfully created a new device: %{name}'
+    destroy:
+      failure: 'Something is wrong, error code: 233, please contact admin.'
+      success: Successfully removed the device
+    device_item:
+      capture: Capture
+      close: Close
+      open: Open
+    edit:
+      title: Update Device
+      update: Update this device
+    form:
+      back: Back
+      device_location: Device location
+      device_name: Device name
+      device_order: Device order
+      device_type: Device type
+      off_command: Off command
+      on_command: On command
+      smaller_is_former: (Smaller is former)
+      will_not_save: Will not save any information
+    index:
+      add_new_device: Add New Device
+    new:
+      title: New Device
+    show:
+      close: Close
+      confirmation: 'This will remove device: %{device_name}, you can''t find it back, are you sure?'
+      destroy: Destroy
+      device_location: Device location
+      device_name: Device name
+      device_order: Device order
+      device_type: Device type
+      edit: Edit
+      off_command: Off command
+      on_command: On command
+      open: Open
+      smaller_is_former: (Smaller is former)
+    trigger_off_command:
+      turn_off: Closing
+    trigger_on_command:
+      turn_on: Opening
+    update:
+      success: Successfully updated the device
+  home: Home
+  my_profile: My Profile
+  sign_in: Sign in
+  sign_out: Sign out
+  sign_up: Sign up
+  smart_home: Smart Home
   static_pages:
     signed_in_home:
-      welcome_line: "Hello!"
-  devices:
-    device_item:
-      open: "Open"
-      close: "Close"
-      capture: "Capture"
-    index:
-      add_new_device: "Add New Device"
-    form:
-      device_name: "Device name"
-      device_type: "Device type"
-      device_location: "Device location"
-      on_command: "On command"
-      off_command: "Off command"
-      device_order: "Device order"
-      smaller_is_former: "(Smaller is former)"
-      will_not_save: "Will not save any information"
-      back: "Back"
-    new:
-      title: "New Device"
-    show:
-      device_name: "Device name"
-      device_type: "Device type"
-      device_location: "Device location"
-      on_command: "On command"
-      off_command: "Off command"
-      device_order: "Device order"
-      smaller_is_former: "(Smaller is former)"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirmation: "This will remove device: %{device_name}, you can't find it back, are you sure?"
-    edit:
-      title: "Update Device"
-      update: "Update this device"
-    create:
-      success: "Successfully created a new device: %{name}"
-    update:
-      success: "Successfully updated the device"
-    destroy:
-      success: "Successfully removed the device"
-      failure: "Something is wrong, error code: 233, please contact admin."
-    trigger_on_command:
-      turn_on: "Opening"
-    trigger_off_command:
-      turn_off: "Closing"
+      welcome_line: Hello!
+  your_devices: Your Devices

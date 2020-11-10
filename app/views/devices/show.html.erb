@@ -36,6 +36,10 @@
     </div>
     <br />
     <div class="buttons is-right">
+      <% if @device.device_type.downcase != "camera" %>
+        <%= link_to t(".open"), on_device_path, method: "post", class: "button is-primary is-light is-outlined" %>
+        <%= link_to t(".close"), off_device_path, method: "post", class: "button is-danger is-light is-outlined" %>
+      <% end %>
       <%= link_to t(".edit"), edit_device_path, class: "button is-info" %>
       <%= button_to t(".destroy"), device_path, class: "button is-danger",
         method: :delete,

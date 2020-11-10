@@ -3,7 +3,11 @@
     <div class="container">
 
       <div class="navbar-brand">
-        <%= link_to t(:smart_home), root_path, class: "navbar-item" %>
+        <% if user_signed_in? %>
+          <%= link_to t(:smart_home), devices_path, class: "navbar-item" %>
+        <% else %>
+          <%= link_to t(:smart_home), root_path, class: "navbar-item" %>
+        <% end %>
         <span class="navbar-burger burger" data-target="navbarMenuHeroC">
           <span></span>
           <span></span>
