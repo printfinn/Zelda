@@ -94,6 +94,6 @@ class DevicesController < ApplicationController
       end
       Process.detach(job1)
       flash[:primary] = t(".turn_#{instruction}").concat("#{@device.device_name}")
-      redirect_to devices_path
+      redirect_back(fallback_location: devices_path)
     end
 end
