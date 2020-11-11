@@ -2,6 +2,17 @@
 <section class="section">
   <div class="container">
     <div class="title is-3"><%= @device.device_name %></div>
+    <div class="buttons is-right">
+      <% if @device.device_type.downcase != "camera" %>
+        <%= link_to t(".open"), on_device_path, method: "post", class: "button is-primary is-light is-outlined" %>
+        <%= link_to t(".close"), off_device_path, method: "post", class: "button is-danger is-light is-outlined" %>
+      <% end %>
+      <%= link_to t(".edit"), edit_device_path, class: "button is-info" %>
+      <%= button_to t(".destroy"), device_path, class: "button is-danger",
+        method: :delete,
+        data: { confirm: t(".confirmation", device_name: @device.device_name) } %>
+    </div>
+    <br />
     <div class="box">
       <div class="table-container">
         <table class="table is-striped is-fullwidth">
@@ -33,17 +44,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-    <br />
-    <div class="buttons is-right">
-      <% if @device.device_type.downcase != "camera" %>
-        <%= link_to t(".open"), on_device_path, method: "post", class: "button is-primary is-light is-outlined" %>
-        <%= link_to t(".close"), off_device_path, method: "post", class: "button is-danger is-light is-outlined" %>
-      <% end %>
-      <%= link_to t(".edit"), edit_device_path, class: "button is-info" %>
-      <%= button_to t(".destroy"), device_path, class: "button is-danger",
-        method: :delete,
-        data: { confirm: t(".confirmation", device_name: @device.device_name) } %>
     </div>
   </div>
 </section>
