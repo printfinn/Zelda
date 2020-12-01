@@ -1,7 +1,7 @@
 # Zelda: A cloud free smart home web interface
 
 [![CircleCI](https://circleci.com/gh/printfinn/Zelda.svg?style=svg)](https://circleci.com/gh/printfinn/Zelda)
-## What it does
+## What it does (Device Model)
 
 You have a lot of smart devices, you want to control them but not with Big Brothers watching you, this is a web server you can set up on your raspberry pi (or whatever Linux that can run Ruby on Rails) and control your devices through.
 
@@ -22,6 +22,34 @@ To use this:
 6. If the script file is on another machine, you might want to ssh to it, make sure to pass your public ssh keyfile to that remote machine so you don't have to input your password while calling the script with ssh through this site.
 
 7. Don't write 'sudo rm -rf' kind of commands or other commands you don't understand, they will harm your system.
+
+## New Feature (2020.12.01) Sensor with Value (Sensor Model)
+
+Why have this:
+
+Some IoT devices read input periodically from environment, unlike the switches which only accept commands from human.
+To use these sensor devices, we need to read data from them.
+The new Sensor Model is a simple model which accepts PATCH request (without csrf but with a fixed generated token), and will update the value of this sensor by the PATCH params.
+
+How to use:
+
+First, generate a sensor from webapp browser gui, remember the generated `token`.
+Second, send PATCH request to the url with `cURL` or `Python requests lib`, like the instruction on the show_sensor page.
+
+For example:
+
+You can PATCH with Python requests lib:
+
+```
+import requests
+requests.patch('localhost:3000/sensors/3/update_value', { 'sensor[value]': '50', 'token': 'Zv2VxwHKoX' })
+```
+
+Or with cURL
+```
+curl --request PATCH localhost:3000/sensors/3/update_value\?sensor\[value\]=50\&token=Zv2VxwHKoX
+```
+
 
 ## I18n Supports
 Zelda supports Chinese and English now.

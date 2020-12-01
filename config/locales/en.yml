@@ -1,4 +1,6 @@
 en:
+  :sensor: Sensor
+  :your_sensors: Your Sensors
   devices:
     create:
       success: 'Successfully created a new device: %{name}'
@@ -47,6 +49,40 @@ en:
       success: Successfully updated the device
   home: Home
   my_profile: My Profile
+  or_curl_command: Or with cURL
+  sensors:
+    create:
+      success: Successfully updated the new sensor
+    destroy:
+      failure: 'Something is wrong, error code: 234, please contact admin.'
+      success: Successfully removed the sensor
+    edit:
+      title: Edit Sensor
+    form:
+      confirm: Confirm
+      name: Sensor Name
+      token: Token
+      value: Value
+    index:
+      add_new_sensor: Add new sensor
+      name: Sensor Name
+      updated_at: Updated at
+      value: Value
+    new:
+      title: New Sensor
+    sensor:
+      ago: ago
+    show:
+      confirmation: Will remove, are you sure?
+      destroy: Remove
+      edit: Edit
+      name: 'Sensor Name: '
+      patch_command: You can PATCH with python requests
+      token: 'Token: '
+      updated_at: Updated at
+      value: 'Value: '
+    update:
+      success: Successfully updated the sensor
   sign_in: Sign in
   sign_out: Sign out
   sign_up: Sign up

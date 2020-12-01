@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :sensors do
+    member do
+      patch 'update_value', to: 'sensors#update_value'
+    end
+  end
+
   resources :devices do
     member do
       post 'on', to: 'devices#trigger_on_command'

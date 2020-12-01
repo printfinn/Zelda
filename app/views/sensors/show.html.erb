@@ -1,0 +1,43 @@
+<% provide(:page_title, @sensor.name) %>
+<div class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="box">
+        <div class="columns is-mobile">
+          <div class="column"><%= t(".name") %></div>
+          <div class="column"><%= @sensor.name %></div>
+        </div>
+        <div class="columns is-mobile">
+          <div class="column"><%= t(".value") %></div>
+          <div class="column"><%= @sensor.value %></div>
+        </div>
+        <div class="columns is-mobile">
+          <div class="column"><%= t(".token") %></div>
+          <div class="column"><%= @sensor.token %></div>
+        </div>
+        <div class="columns is-mobile">
+          <div class="column"><%= t(".updated_at") %></div>
+          <div class="column"><%= @sensor.updated_at.localtime %></div>
+        </div>
+      </div>
+      <%= t(".patch_command") %>
+      <div class="box">
+        <p>import requests</p>
+        <p><%= "requests.patch('http://#{request.env['SERVER_NAME']}:#{request.env['SERVER_PORT']}/sensors/#{@sensor.id}/update_value', { 'sensor[value]': '50', 'token': '#{@sensor.token}' })" %></p>
+      </div>
+      <%= t("or_curl_command") %>
+      <div class="box">
+        <p><%= "curl --request PATCH http://#{request.env['SERVER_NAME']}:#{request.env['SERVER_PORT']}/sensors/#{@sensor.id}/update_value\\?sensor\\[value\\]=50\\&token=#{@sensor.token}" %></p>
+      </div>
+
+        <div class="buttons is-right">
+          <%= link_to t(".edit"), edit_sensor_path, class: "button is-info" %>
+          <%= button_to t(".destroy"), sensor_path, class: "button is-danger",
+        method: :delete,
+        data: { confirm: t(".confirmation") } %>
+        </div>
+
+    </div>
+  </div>
+</div>

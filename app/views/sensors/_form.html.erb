@@ -1,0 +1,18 @@
+<%= form_with model: @sensor, local: true do |form| %>
+  <%= render 'devise/shared/error_messages', resource: @sensor %>
+  <div class="field">
+    <%= form.label t(".name"), class: "label" %>
+    <%= form.text_field :name, class: "input is-info", type: "text" %>
+  </div>
+  <div class="field">
+    <%= form.label t(".value"), class: "label" %>
+    <%= form.text_field :value, class: "input is-info", type: "text" %>
+  </div>
+  <div class="field">
+    <%= form.label t(".token"), class: "label" %>
+    <%= form.text_field :token, class: "input is-info", type: "text" %>
+  </div>
+  <div class="actions has-text-right">
+    <%= form.submit t(".confirm"), class: "button is-link" %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to sensor.name, sensor_path(sensor), class: "button is-fullwidth is-primary" %></td>
+  <td><%= link_to sensor.value, sensor_path(sensor), class: "button is-fullwidth is-primary" %></td>
+  <td><%= link_to "#{time_ago_in_words(sensor.updated_at)} #{t(".ago")}", sensor_path(sensor), class: "button is-fullwidth is-primary" %></td>
+</tr>

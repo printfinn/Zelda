@@ -5,6 +5,7 @@
       <div class="navbar-brand">
         <% if user_signed_in? %>
           <%= link_to t(:smart_home), devices_path, class: "navbar-item" %>
+
         <% else %>
           <%= link_to t(:smart_home), root_path, class: "navbar-item" %>
         <% end %>
@@ -22,6 +23,7 @@
             <%= link_to t(:home), root_path, class: "navbar-item" %>
             <%#= link_to "Documentation", static_pages_documentation_path, class: "navbar-item" %>
             <% if user_signed_in? %>
+              <%= link_to t(:sensor), sensors_path, class: "navbar-item" %>
               <%#= link_to "Control Center", devices_path, class: "navbar-item" %>
               <%= link_to t(:my_profile), edit_user_registration_path, class: "navbar-item" %>
             <% end %>

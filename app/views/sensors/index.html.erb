@@ -1,0 +1,26 @@
+<% provide(:page_title, t(:your_sensors)) %>
+<section class="section">
+  <div class="container">
+    <div class="title is-3"><%= t(:your_sensors) %></div>
+
+    <div class="table-container">
+      <table class="table is-striped is-fullwidth">
+        <tbody>
+          <thead class="has-text-centered">
+            <tr>
+              <th><%= t(".name") %></th>
+              <th><%= t(".value") %></th>
+              <th><%= t(".updated_at") %></th>
+            </tr>
+          </thead>
+          <%= render @sensors %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="buttons is-right">
+      <%= link_to t(".add_new_sensor"), new_sensor_path, method: "get", class: "button shadowed is-link" %>
+    </div>
+
+  </div>
+</section>

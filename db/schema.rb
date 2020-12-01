@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_065236) do
+ActiveRecord::Schema.define(version: 2020_12_01_084854) do
 
   create_table "devices", force: :cascade do |t|
     t.string "device_name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2020_10_17_065236) do
     t.text "on_command"
     t.text "off_command"
     t.integer "device_order", default: 0
+  end
+
+  create_table "sensors", force: :cascade do |t|
+    t.string "name"
+    t.string "value"
+    t.string "token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
