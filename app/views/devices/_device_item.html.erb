@@ -11,7 +11,7 @@
     <td>
       <div class="buttons is-centered">
         <% if device.device_type.downcase != "camera" %>
-          <%= button_to t(".open"), on_device_path(device), method: "post", class: "button is-primary is-light is-outlined" %>
+          <%= button_to t(".open"), on_device_path(device), method: "post", data: {confirm: t(".sure", device_name: device.device_name) }, class: "button is-primary is-light is-outlined" %>
         <% end %>
       </div>
     </td>
@@ -19,7 +19,7 @@
     <td>
       <div class="buttons is-centered">
         <% if device.device_type.downcase != "camera" %>
-          <%= button_to t(".close"), off_device_path(device), method: "post", class: "button is-danger is-light is-outlined" %>
+          <%= button_to t(".close"), off_device_path(device), method: "post", data: {confirm: t(".sure_off", device_name: device.device_name) }, class: "button is-danger is-light is-outlined" %>
         <% elsif device.device_type.downcase == "camera" %>
           <%= button_to t(".capture"), capture_device_path(device), method: "post", class: "button is-warning is-outlined is-light" %>
         <% end %>

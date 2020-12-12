@@ -11,6 +11,8 @@ en:
       capture: Capture
       close: Close
       open: Open
+      sure: Will open %{device_name}, are you sure?
+      sure_off: Closing %{device_name}, are you sure?
     edit:
       title: Update Device
       update: Update this device

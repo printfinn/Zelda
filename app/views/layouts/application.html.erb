@@ -2,18 +2,18 @@
 <html class="has-navbar-fixed-top">
   <%= render "layouts/head.html.erb" %>
 
-  <%= render "layouts/header.html.erb" %>
-  <div class="has-text-centered is-size-5">
-    <% flash.each do |message_type, message| %>
-      <div class="notification is-marginless notification-<%= message_type %>">
-        <button class="delete"></button>
-        <%= message %>
-      </div>
-    <% end %>
-  </div>
   <body>
+    <%= render "layouts/header.html.erb" %>
+    <div class="has-text-centered is-size-5">
+      <% flash.each do |message_type, message| %>
+        <div class="notification is-marginless notification-<%= message_type %>">
+          <button class="delete"></button>
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
+    <%= render "layouts/footer.html.erb" %>
   </body>
 
-  <%= render "layouts/footer.html.erb" %>
 </html>
