@@ -9,13 +9,14 @@ ruby "3.0.0"
 gem "rails", "~>6.0.3.6"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
+# ffi 1.15 has problem with Arm Linux (Rpi)
 gem "ffi", "~> 1.14.2"
 # Use Puma as the app server
-gem "puma", "~> 4.3.5"
+gem "puma", "~> 5.1"
 # Use SCSS for stylesheets
 gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "~> 4.0"
+gem "webpacker", "~> 5.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
