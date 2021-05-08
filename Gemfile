@@ -10,7 +10,7 @@ gem "rails", "~>6.0.3.6"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 # ffi 1.15 has problem with Arm Linux (Rpi)
-gem "ffi", "~> 1.14.2"
+# gem "ffi", "~> 1.14.2"
 # Use Puma as the app server
 gem "puma", "~> 5.1"
 # Use SCSS for stylesheets

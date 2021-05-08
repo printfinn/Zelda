@@ -1,6 +1,5 @@
 # Zelda: A cloud free smart home web interface
 
-[![CircleCI](https://circleci.com/gh/printfinn/Zelda.svg?style=svg)](https://circleci.com/gh/printfinn/Zelda)
 ## What it does (Device Model)
 
 You have a lot of smart devices, you want to control them but not with Big Brothers watching you, this is a web server you can set up on your raspberry pi (or whatever Linux that can run Ruby on Rails) and control your devices through.
