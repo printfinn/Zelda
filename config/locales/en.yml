@@ -1,6 +1,11 @@
 en:
   :sensor: Sensor
   :your_sensors: Your Sensors
+  registrations:
+    new:
+      registration_closed: "No Access is Allowed for Registration"
+    create:
+      registration_closed: "No Access is Allowed for Registration"
   devices:
     create:
       success: 'Successfully created a new device: %{name}'

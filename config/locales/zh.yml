@@ -83,6 +83,11 @@ zh:
       month: 月
       second: 秒
       year: 年
+  registrations:
+    new:
+      registration_closed: "当前不允许注册"
+    create:
+      registration_closed: "当前不允许注册"
   devices:
     create:
       success: '成功创建了新设备: %{name}'
