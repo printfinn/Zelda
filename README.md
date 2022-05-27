@@ -119,7 +119,9 @@ $ rails server
 
 
 ## Bonus:
+
 If you ever want to run it on a raspberry pi, here is a systemd config you can use (with rbenv):
+(Remember to procompile your assets for production mode with: `RAILS_ENV=production rails assets:precompile`)
 
 ```
 [Unit]
@@ -127,7 +129,9 @@ Description=Smart Garage Rails Service
 After=syslog.target
 
 [Service]
-ExecStart=/home/pi/.rbenv/bin/rbenv exec bundle exec rails server -b 0.0.0.0
+ExecStart=/home/pi/.rbenv/bin/rbenv exec bundle exec rails s
+Environment="RAILS_ENV=production"
+Environment="RAILS_SERVE_STATIC_FILES=true"
 WorkingDirectory=/home/pi/smart-garage-rails
 StandardOutput=inherit
 StandardError=inherit
