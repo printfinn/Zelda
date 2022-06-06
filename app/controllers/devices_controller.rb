@@ -68,6 +68,10 @@ class DevicesController < ApplicationController
     cmd = @device.on_command
     system(cmd)
     session[:photo_name] = "#{@device.device_name}"
+    Thread.new {
+      sleep 10
+      File.delete('public/assets/images/captured.jpg') if File.exists? 'public/assets/images/captured.jpg'
+    }
     redirect_to devices_path # camera_photo_device_path
   end
 
