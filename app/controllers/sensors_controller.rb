@@ -1,6 +1,6 @@
 class SensorsController < ApplicationController
   before_action :authenticate_user!, except: [:update_value]
-  skip_before_action :verify_authenticity_token, only: [:update_value]
+  # skip_before_action :verify_authenticity_token, only: [:update_value]
 
   def new
     @sensor = Sensor.new
